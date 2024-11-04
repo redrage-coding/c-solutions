@@ -24,3 +24,11 @@ void store_zeros(int a[], int n) {
         *p = 0;
 }
 ```
+
+```c
+void store_zeros(int a[], int n) {
+
+    for (int i = 0; i < n; i++){
+        *(a+i) = 0;
+}
+```
