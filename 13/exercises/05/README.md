@@ -25,11 +25,13 @@ void capitalize(char str[]) {
 #### (b)
 
 ```c
+#include <ctype.h>
+
 void capitalize(char *str) {
     char *c = str;
-    while (c != '\0') {
-        if (isalpha(c))
-            toupper(c);
+    while (*c != '\0') {  // Dereference c to get the character
+        if (isalpha(*c))  // Check if *c is an alphabetic character
+            *c = toupper(*c);  // Convert *c to uppercase and assign back
         c++;
     }
 }
