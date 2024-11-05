@@ -7,12 +7,30 @@ clarity.
 ### Solution
 
 ```c
-void censor(char *str) {
-    char *c = str;
-    while (c+2 != '\0') {
-        if (*c == 'f' && *(c+1) == 'o' && *(c+2) == 'o')
-            *c = *(c+1) = *(c+2) = 'x';
-        c++;
+#include <stdio.h>
+
+
+void censor(char *str);
+
+int main(void)
+{
+char arr[] = "food fool fight foor";
+censor(arr);
+
+printf("%s", arr);
+
+}
+
+
+void censor(char *str)
+{
+    char *temp_str = str;
+
+    while(*(temp_str + 2) != '\0'){
+        if(*temp_str == 'f' && *(temp_str + 1) == 'o' && *(temp_str + 2) == 'o')
+            *temp_str = *(temp_str + 1) = *(temp_str + 2) = 'x';
+        temp_str++;
     }
+
 }
 ```
