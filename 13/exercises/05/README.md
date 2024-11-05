@@ -12,11 +12,13 @@ access the characters in the string.
 #### (a)
 
 ```c
+#include <ctype.h>
+
 void capitalize(char str[]) {
     int i = 0;
     while (str[i] != '\0') {
-        if (isalpha(str[i]))
-            toupper(str[i]);
+        if (isalpha(str[i]))  // Check if str[i] is an alphabetic character
+            str[i] = toupper(str[i]);  // Assign the uppercase character back to str[i]
         i++;
     }
 }
