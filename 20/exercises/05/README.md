@@ -7,7 +7,7 @@ intensities.
 ### Solution
 
 ```c
-#define GET_RED(x) ((x) & 0xff)
-#define GET_GREEN(x) ((x) >> 8 & 0xff)
-#define GET_BLUE(x) ((x) >> 16 & 0xff)
+#define GET_RED(color)   (((color) >> 16) & 0xFF)
+#define GET_GREEN(color) (((color) >> 8) & 0xFF)
+#define GET_BLUE(color)  ((color) & 0xFF)
 ```
